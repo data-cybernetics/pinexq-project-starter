@@ -16,7 +16,7 @@ COPY uv.lock pyproject.toml /app/
 
 # Install dependencies and ProCon itself
 RUN --mount=type=cache,target=/root/.cache/uv \
-    uv sync --locked --no-editable --link-mode=copy
+    uv sync --locked --no-editable --link-mode=copy --no-python-downloads
 
 
 # Stage 2: Use the previously created installation and build the worker ontop of it.
