@@ -5,7 +5,7 @@ logger = logging.getLogger(__name__)
 
 
 # noinspection PyMethodMayBeStatic
-class FirstStep(Step):  # <-- 2.
+class FirstStep(Step):
     """
     First example for a compute module
     """
@@ -13,6 +13,11 @@ class FirstStep(Step):  # <-- 2.
     def hello_world(self) -> str:
         """
         A hello world example.
+
+        Some python code documentation:
+        ```python
+        print("Hello World!")
+        ```
         """
         message = "Hello World!"
         logger.info(message)
