@@ -1,15 +1,14 @@
-from procon.step import Step
+from procon.step import Step, version
 import logging
 
 logger = logging.getLogger(__name__)
 
-
-# noinspection PyMethodMayBeStatic
 class FirstStep(Step):
     """
     First example for a compute module
     """
 
+    @version("0.0.0")  # increase version for each deployment
     def hello_world(self) -> str:
         """
         A hello world example.
