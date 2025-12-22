@@ -7,7 +7,6 @@ FROM python:3.14-slim AS procon-base
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 
 ENV UV_CACHE_DIR=/root/.cache/uv/python \
-    UV_EXTRA_INDEX_URL=$INDEX_URL \
     UV_COMPILE_BYTECODE=1
 
 WORKDIR /app
