@@ -5,4 +5,4 @@ project_name:
 
 pinexq_endpoint:
   type: str
-  help: What is your pinexq endpoint? e.g. api.pinexq.net
+  help: What is your pinexq endpoint? e.g. job.api.pinexq.net
