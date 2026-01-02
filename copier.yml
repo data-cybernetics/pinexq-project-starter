@@ -2,10 +2,12 @@
 project_name:
   type: str
   help: What is your project name?
+  validator: "{% if not project_name %}project_name cannot be empty{% endif %}"
 
 pinexq_endpoint:
   type: str
   help: What is your pinexq endpoint? e.g. jobs.api.pinexq.net
+  validator: "{% if not pinexq_endpoint %}pinexq_endpoint cannot be empty{% endif %}"
 
 python_versions:
   type: str
