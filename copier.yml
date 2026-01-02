@@ -1,8 +1,35 @@
 # questions
+python_versions:
+  type: str
+  help: What Python versions will be supported?
+  default:
+    - "3.13"
+    - "3.14"
+  multiselect: true
+  choices:
+    - "3.11"
+    - "3.12"
+    - "3.13"
+    - "3.14"
+  validator: |
+    {% set all_ver = ["3.11", "3.12", "3.13", "3.14"] %}
+    {% if all_ver.index(python_versions[-1]) - all_ver.index(python_versions[0]) + 1 != python_versions|length %}
+    python_versions must be a consecutive list of versions
+    {% endif %}
+
+default_python_version:
+  type: str
+  help: What is the default Python version to use?
+  default: "{{python_versions[-1]}}"
+  choices: |
+    {% for ver in python_versions %}
+    - "{{ver}}"
+    {% endfor %}
+
 project_name:
   type: str
   help: What is your project name?
 
 pinexq_endpoint:
   type: str
-  help: What is your pinexq endpoint? e.g. job.api.pinexq.net
+  help: What is your pinexq endpoint? e.g. jobs.api.pinexq.net

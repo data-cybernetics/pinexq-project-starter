@@ -3,7 +3,7 @@ name = "{{project_name}}"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">={{ python_versions[0] }},<{{ python_versions[-1]|int + 1 }}"
 dependencies = [
     "pinexq-procon>=2.1.0.dev3"
 ]
