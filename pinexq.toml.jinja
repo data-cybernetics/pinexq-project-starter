@@ -4,5 +4,8 @@ pinexq_endpoint = "{{ pinexq_endpoint }}"
 entrypoint = "main.py"
 
 [deployment]
-resource_preset = "Medium"
+# CPU, memory and disk each worker reserves, as Kubernetes quantities
+cpu = "1"
+memory = "4Gi"
+disk = "10Gi"
 max_replicas = 4
