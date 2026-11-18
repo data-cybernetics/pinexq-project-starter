@@ -4,7 +4,7 @@
 # https://docs.astral.sh/uv/guides/integration/docker/
 
 FROM python:{{ default_python_version }}-slim AS procon-base
-COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
+COPY --from=ghcr.io/astral-sh/uv:latest@sha256:d3b601f0c7b118bc1753febf7c41cc80981df678445e0254284eecf84db79a7d /uv /uvx /bin/
 
 ENV UV_CACHE_DIR=/root/.cache/uv/python \
     UV_COMPILE_BYTECODE=1
